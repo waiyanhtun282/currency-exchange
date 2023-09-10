@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-
-// const endpoints = "live";
 const URL = "http://apilayer.net/api";
 
 const useFetch = (endpoints) => {
@@ -33,7 +31,8 @@ const useFetch = (endpoints) => {
       fetchApi(controller.signal);
 
       return () => controller.abort();
-  }, []);
+  }, [endpoints]);
+  
   return {loading,data};
 };
 
